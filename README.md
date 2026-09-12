@@ -8,6 +8,8 @@ Die Produktkarten verwenden die Amazon Creators API, den offiziellen Nachfolger 
 
 Damit der Finder auch bei einer kurzzeitig gedrosselten Schnittstelle sofort funktioniert, enthält `products-data.js` einen am 12. September 2026 über die Creators API geprüften Bestand mit 50 eindeutigen Parent-ASINs: 25 Angebote für Frauen und 25 für Männer. Die Website und `/api/products` verwenden diese Fassung als Ausfallsicherung; sobald gültige Zugangsdaten im neuen Vercel-Projekt vorhanden sind, aktualisiert der Endpunkt den Bestand direkt über Amazon.
 
+Die kuratierte Auswahl enthält ausschließlich bekannte Marken. Women zeigt Swarovski, s.Oliver, LIEBESKIND, Fossil und THOMAS SABO. Men zeigt Fossil, Diesel, Lacoste, Police, Tommy Hilfiger und Emporio Armani. Jede Ansicht enthält je fünf Ketten, Ringe, Armbänder, Ohrringe und Anhänger.
+
 Benötigte serverseitige Vercel-Variablen:
 
 - `AMAZON_CREATORS_CREDENTIAL_ID`

@@ -5,19 +5,23 @@ const MARKETPLACE='www.amazon.de';
 const PARTNER_TAG=process.env.AMAZON_PARTNER_TAG||'Onlinestarkei-21';
 const searches={
   women:[
-    {keywords:'Damen Halskette Schmuck',category:'Ketten'},
-    {keywords:'Damen Ring Schmuck',category:'Ringe'},
-    {keywords:'Damen Armband Schmuck',category:'Armbänder'},
-    {keywords:'Damen Ohrringe Schmuck',category:'Ohrringe'},
-    {keywords:'Damen Anhänger Schmuck',category:'Anhänger'}
+    {keywords:'Swarovski Damen Halskette',category:'Ketten'},
+    {keywords:'s.Oliver Damen Ring',category:'Ringe'},
+    {keywords:'LIEBESKIND Damen Armband',category:'Armbänder'},
+    {keywords:'Fossil Damen Ohrringe',category:'Ohrringe'},
+    {keywords:'Thomas Sabo Damen Anhänger',category:'Anhänger'}
   ],
   men:[
-    {keywords:'Herren Halskette Schmuck',category:'Ketten'},
-    {keywords:'Herren Ring Schmuck',category:'Ringe'},
-    {keywords:'Herren Armband Schmuck',category:'Armbänder'},
-    {keywords:'Herren Ohrringe Schmuck',category:'Ohrringe'},
-    {keywords:'Herren Anhänger Schmuck',category:'Anhänger'}
+    {keywords:'Fossil Herren Halskette',category:'Ketten'},
+    {keywords:'Diesel Herren Ring Schmuck',category:'Ringe'},
+    {keywords:'Lacoste Herren Armband',category:'Armbänder'},
+    {keywords:'Diesel Herren Ohrringe',category:'Ohrringe'},
+    {keywords:'Police Herren Anhänger',category:'Anhänger'}
   ]
+};
+const approvedBrands={
+  women:new Set(['Swarovski','s.Oliver','LIEBESKIND','Fossil','THOMAS SABO']),
+  men:new Set(['Fossil','Diesel','Lacoste','Police','Tommy Hilfiger','Emporio Armani'])
 };
 
 async function accessToken(){
@@ -60,17 +64,20 @@ export default async function handler(req,res){
       if(i)await new Promise(resolve=>setTimeout(resolve,1050));
       buckets.push(await searchOne(token,searches[gender][i],gender));
     }
-    const seen=new Set();
-    const products=[];
+    const seen=new Set(),products=[];
+    const add=product=>{
+      const key=product.parentAsin||product.asin;
+      if(!product.available||!approvedBrands[gender].has(product.brand)||seen.has(key))return false;
+      if(products.filter(p=>p.category===product.category).length>=5)return false;
+      seen.add(key);products.push(product);return true;
+    };
     for(const bucket of buckets){
       for(const product of bucket){
-        const key=product.parentAsin||product.asin;
-        if(!product.available||seen.has(key))continue;
-        seen.add(key);
-        products.push(product);
+        add(product);
         if(products.filter(p=>p.category===product.category).length===5)break;
       }
     }
+    for(const product of globalThis.SCHMUCK_PRODUCTS?.[gender]||[])add(product);
     res.setHeader('Cache-Control','s-maxage=3600, stale-while-revalidate=86400');
     return res.status(200).json({products,count:products.length,requested:25,partnerTag:PARTNER_TAG,updatedAt:new Date().toISOString()});
   }catch(error){
