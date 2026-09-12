@@ -43,12 +43,13 @@ function normalize(item,gender,category){
   const price=item.offersV2?.listings?.[0]?.price||item.offers?.listings?.[0]?.price;
   const money=price?.money||price;
   const image=item.images?.primary?.large?.url||item.images?.primary?.medium?.url||item.images?.primary?.small?.url;
+  const hoverImage=(item.images?.variants||[]).map(x=>x.large?.url||x.medium?.url||x.small?.url).find(Boolean)||null;
   if(!item.asin||!title||!image)return null;
-  return {asin:item.asin,parentAsin:item.parentASIN||item.parentAsin||item.asin,title,brand,image,price:value(money),amount:money?.amount??null,currency:money?.currency||'EUR',url:item.detailPageURL||`https://www.amazon.de/dp/${item.asin}?tag=${PARTNER_TAG}`,gender,category,available:money?.amount!=null};
+  return {asin:item.asin,parentAsin:item.parentASIN||item.parentAsin||item.asin,title,brand,image,hoverImage,price:value(money),amount:money?.amount??null,currency:money?.currency||'EUR',url:item.detailPageURL||`https://www.amazon.de/dp/${item.asin}?tag=${PARTNER_TAG}`,gender,category,available:money?.amount!=null};
 }
 
 async function searchOne(token,{keywords,category},gender){
-  const response=await fetch('https://creatorsapi.amazon/catalog/v1/searchItems',{method:'POST',headers:{authorization:`Bearer ${token}`,'content-type':'application/json','x-marketplace':MARKETPLACE},body:JSON.stringify({partnerTag:PARTNER_TAG,marketplace:MARKETPLACE,keywords,itemCount:10,searchIndex:'Fashion',resources:['images.primary.large','itemInfo.title','itemInfo.byLineInfo','offersV2.listings.price','parentASIN']})});
+  const response=await fetch('https://creatorsapi.amazon/catalog/v1/searchItems',{method:'POST',headers:{authorization:`Bearer ${token}`,'content-type':'application/json','x-marketplace':MARKETPLACE},body:JSON.stringify({partnerTag:PARTNER_TAG,marketplace:MARKETPLACE,keywords,itemCount:10,searchIndex:'Fashion',resources:['images.primary.large','images.variants.large','itemInfo.title','itemInfo.byLineInfo','offersV2.listings.price','parentASIN']})});
   if(!response.ok){const detail=await response.text();throw new Error(`Amazon search failed (${response.status}): ${detail.slice(0,180)}`)}
   const data=await response.json();
   return (data.searchResult?.items||[]).map(x=>normalize(x,gender,category)).filter(Boolean);

@@ -10,6 +10,8 @@ Damit der Finder auch bei einer kurzzeitig gedrosselten Schnittstelle sofort fun
 
 Die kuratierte Auswahl enthält ausschließlich bekannte Marken. Women zeigt Swarovski, s.Oliver, LIEBESKIND, Fossil und THOMAS SABO. Men zeigt Fossil, Diesel, Lacoste, Police, Tommy Hilfiger und Emporio Armani. Jede Ansicht enthält je fünf Ketten, Ringe, Armbänder, Ohrringe und Anhänger.
 
+Für den Hover-Effekt fragt die Schnittstelle zusätzlich `images.variants.large` ab. Wenn Amazon eine weitere Ansicht bereitstellt, zeigt die Produktkarte dieses Detailbild. Ohne alternatives Amazon-Bild bleibt der primäre Produktfreisteller stehen.
+
 Benötigte serverseitige Vercel-Variablen:
 
 - `AMAZON_CREATORS_CREDENTIAL_ID`
