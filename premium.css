@@ -14,6 +14,8 @@ header .audience button{color:#fff}
 header .audience .active{background:#fff;color:#3d2330}
 body.men header .audience .active{color:#050505}
 header .saved{color:inherit}
+header .brand{width:190px;height:74px;display:flex;align-items:center;flex:0 0 auto}
+header .brand img{display:block;width:100%;height:100%;object-fit:contain}
 
 .hero{background-image:none!important}
 .hero.women{background-color:#50303f}
@@ -80,6 +82,29 @@ header .saved{color:inherit}
 .load-more:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(56,35,44,.15)}
 .load-more span{display:block;margin-top:4px;font-size:9px;font-weight:500;opacity:.7;text-transform:uppercase;letter-spacing:.1em}
 
+.site-footer{position:relative;display:block;overflow:hidden;padding:0;background:linear-gradient(145deg,#29151f 0%,#3d2330 52%,#171015 100%);color:#fff}
+body.men .site-footer{background:linear-gradient(145deg,#050505 0%,#161616 56%,#090909 100%)}
+.site-footer:before{content:'';position:absolute;right:-120px;top:-170px;width:520px;height:520px;border:1px solid rgba(255,255,255,.07);transform:rotate(45deg);pointer-events:none}
+.site-footer:after{content:'';position:absolute;right:42px;top:95px;width:190px;height:190px;border:1px solid rgba(255,255,255,.05);transform:rotate(45deg);pointer-events:none}
+.footer-stage{position:relative;z-index:1;display:grid;grid-template-columns:minmax(300px,.85fr) 1.4fr;gap:8vw;padding:78px 5vw 60px}
+.footer-brand>a{display:block;width:300px;max-width:85%}
+.footer-brand img{display:block;width:100%;height:auto}
+.footer-claim{font:400 clamp(30px,3.3vw,53px)/1.05 var(--serif);letter-spacing:-.025em;margin:38px 0 0}
+.footer-claim em{font-weight:400;color:#d9a6ae}
+body.men .footer-claim em{color:#aaa}
+.site-footer .footer-nav{display:grid!important;grid-template-columns:repeat(3,minmax(130px,1fr));gap:42px;padding-top:28px}
+.site-footer .footer-nav>div{display:flex!important;flex-direction:column;align-items:flex-start;gap:16px}
+.footer-nav span,.footer-partner>span{font-size:9px;font-weight:700;letter-spacing:.21em;text-transform:uppercase;color:#d9a6ae;margin-bottom:8px}
+body.men .footer-nav span,body.men .footer-partner>span{color:#aaa}
+.footer-nav a{font:400 16px/1.25 var(--serif);color:rgba(255,255,255,.82);border-bottom:1px solid transparent;padding-bottom:3px;transition:.2s}
+.footer-nav a:hover{color:#fff;border-color:currentColor}
+.footer-partner{position:relative;z-index:1;display:grid!important;grid-template-columns:140px minmax(280px,1fr) auto;align-items:center;gap:30px;margin:0 5vw;padding:28px 0;border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18)}
+.footer-partner>span{margin:0}
+.footer-partner p{max-width:720px;margin:0;color:rgba(255,255,255,.62);font-size:11px;line-height:1.7}
+.footer-partner a{font-size:10px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;white-space:nowrap}
+.footer-bottom{position:relative;z-index:1;display:flex!important;justify-content:space-between;align-items:center;padding:24px 5vw 28px;color:rgba(255,255,255,.48);font-size:9px;letter-spacing:.14em;text-transform:uppercase}
+.footer-bottom p{margin:0}
+
 @media (hover:hover){
   .product-card.has-detail:hover .product-image{opacity:0;transform:scale(.96)}
   .product-card.has-detail:hover .product-detail{opacity:1;transform:scale(1)}
@@ -87,6 +112,7 @@ header .saved{color:inherit}
 }
 
 @media(max-width:800px){
+  header .brand{width:135px;height:56px}
   #finder,#magazin,#beratung{scroll-margin-top:128px}
   .hero-visual{inset:0 0 auto;width:100%;height:72%;object-position:center top}
   .hero.women:before{background:linear-gradient(0deg,rgba(55,29,42,.99) 0%,rgba(55,29,42,.94) 31%,rgba(55,29,42,.25) 62%,transparent 80%)}
@@ -105,6 +131,14 @@ header .saved{color:inherit}
   .product-media .product-image{padding:22px}
   .product-buy{display:block}
   .amazon-link{display:inline-block;margin-top:14px}
+  .footer-stage{grid-template-columns:1fr;gap:48px;padding:62px 20px 42px}
+  .footer-brand>a{width:230px}
+  .footer-claim{font-size:39px;margin-top:30px}
+  .site-footer .footer-nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:38px 24px;padding:0}
+  .site-footer .footer-nav>div{flex-direction:column!important}
+  .footer-partner{grid-template-columns:1fr;gap:13px;margin:0 20px;padding:26px 0}
+  .footer-partner a{white-space:normal;margin-top:5px}
+  .footer-bottom{align-items:flex-start;gap:11px;padding:24px 20px 30px;flex-direction:column!important}
 }
 
 @media(max-width:460px){
