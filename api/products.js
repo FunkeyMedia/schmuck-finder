@@ -1,3 +1,5 @@
+import '../products-data.js';
+
 let tokenCache={value:null,expires:0};
 const MARKETPLACE='www.amazon.de';
 const PARTNER_TAG=process.env.AMAZON_PARTNER_TAG||'Onlinestarkei-21';
@@ -72,6 +74,8 @@ export default async function handler(req,res){
     res.setHeader('Cache-Control','s-maxage=3600, stale-while-revalidate=86400');
     return res.status(200).json({products,count:products.length,requested:25,partnerTag:PARTNER_TAG,updatedAt:new Date().toISOString()});
   }catch(error){
-    return res.status(503).json({products:[],count:0,requested:25,error:'Amazon Creators API ist noch nicht freigeschaltet oder konfiguriert.',detail:process.env.NODE_ENV==='development'?error.message:undefined});
+    const products=globalThis.SCHMUCK_PRODUCTS?.[gender]||[];
+    res.setHeader('Cache-Control','s-maxage=3600, stale-while-revalidate=86400');
+    return res.status(200).json({products,count:products.length,requested:25,partnerTag:PARTNER_TAG,updatedAt:globalThis.SCHMUCK_PRODUCTS?.updatedAt,source:'verified-cache'});
   }
 }
