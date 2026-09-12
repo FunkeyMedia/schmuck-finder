@@ -105,6 +105,16 @@ body.men .footer-nav span,body.men .footer-partner>span{color:#aaa}
 .footer-bottom{position:relative;z-index:1;display:flex!important;justify-content:space-between;align-items:center;padding:24px 5vw 28px;color:rgba(255,255,255,.48);font-size:9px;letter-spacing:.14em;text-transform:uppercase}
 .footer-bottom p{margin:0}
 
+.legal-page{max-width:1060px;padding-top:90px;padding-bottom:120px}
+.legal-page>h1{font-size:clamp(54px,7vw,92px);letter-spacing:-.045em;margin:22px 0 16px}
+.legal-page>.lead{max-width:720px;font:400 20px/1.6 var(--serif);color:#6d5b62;margin-bottom:55px}
+.legal-body{max-width:780px}
+.legal-body h2{font:400 32px/1.15 var(--serif);margin:46px 0 14px;color:var(--dark)}
+.legal-body p{font-size:16px;line-height:1.8;color:#332d30}
+.legal-body a{color:var(--dark);border-bottom:1px solid currentColor}
+.legal-clear{margin:30px 0 18px;border:1px solid var(--dark);background:var(--dark);color:#fff;padding:14px 18px;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
+.legal-clear:disabled{opacity:.55;cursor:default}
+
 @media (hover:hover){
   .product-card.has-detail:hover .product-image{opacity:0;transform:scale(.96)}
   .product-card.has-detail:hover .product-detail{opacity:1;transform:scale(1)}
@@ -139,6 +149,11 @@ body.men .footer-nav span,body.men .footer-partner>span{color:#aaa}
   .footer-partner{grid-template-columns:1fr;gap:13px;margin:0 20px;padding:26px 0}
   .footer-partner a{white-space:normal;margin-top:5px}
   .footer-bottom{align-items:flex-start;gap:11px;padding:24px 20px 30px;flex-direction:column!important}
+  .legal-page{padding:60px 20px 85px}
+  .legal-page>h1{font-size:48px;overflow-wrap:anywhere}
+  .legal-page>.lead{font-size:18px;margin-bottom:42px}
+  .legal-body h2{font-size:28px;margin-top:38px}
+  .legal-body p{font-size:15px}
 }
 
 @media(max-width:460px){
