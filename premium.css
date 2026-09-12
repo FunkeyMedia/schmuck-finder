@@ -39,6 +39,8 @@ header .saved{color:inherit}
 .finder-search{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:18px;padding:8px 4px 0}
 .finder-search span{font-size:11px;letter-spacing:.08em;text-transform:uppercase}
 .finder-search input{border:1px solid var(--line);background:#fff;padding:15px 17px;width:100%}
+.finder-reset{grid-column:1/-1;justify-self:end;border:0;background:transparent;color:var(--dark);padding:8px 4px 2px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid currentColor}
+.finder-reset:disabled{opacity:.34;cursor:default}
 
 .product-count{display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid var(--line);padding-bottom:13px}
 .product-count strong{font-size:13px;color:var(--dark)}
@@ -76,6 +78,7 @@ header .saved{color:inherit}
   .hero-actions>span{display:block;margin-top:16px;line-height:1.6}
   .finder-game{grid-template-columns:1fr;padding:12px}
   .finder-search{grid-column:auto;grid-template-columns:1fr;gap:8px;padding:8px 4px 4px}
+  .finder-reset{grid-column:auto;justify-self:start;margin:2px 4px 6px}
   .product-grid{gap:14px 8px}
   .product-media .product-image{padding:22px}
   .product-buy{display:block}
