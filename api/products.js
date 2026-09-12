@@ -20,8 +20,8 @@ const searches={
   ]
 };
 const approvedBrands={
-  women:new Set(['Swarovski','s.Oliver','LIEBESKIND','Fossil','THOMAS SABO']),
-  men:new Set(['Fossil','Diesel','Lacoste','Police','Tommy Hilfiger','Emporio Armani'])
+  women:new Set(['Swarovski','THOMAS SABO','Fossil','LIEBESKIND','s.Oliver','Guess','Michael Kors','Calvin Klein','Tommy Hilfiger','Elli']),
+  men:new Set(['Fossil','Diesel','Police','Tommy Hilfiger','Emporio Armani','BOSS','Lacoste','Calvin Klein','s.Oliver','Maserati'])
 };
 
 async function accessToken(){
@@ -68,22 +68,23 @@ export default async function handler(req,res){
     const seen=new Set(),products=[];
     const add=product=>{
       const key=product.parentAsin||product.asin;
+      if(products.length>=200)return false;
       if(!product.available||!approvedBrands[gender].has(product.brand)||seen.has(key))return false;
-      if(products.filter(p=>p.category===product.category).length>=5)return false;
+      if(products.filter(p=>p.category===product.category).length>=60)return false;
       seen.add(key);products.push(product);return true;
     };
     for(const bucket of buckets){
       for(const product of bucket){
         add(product);
-        if(products.filter(p=>p.category===product.category).length===5)break;
+        if(products.filter(p=>p.category===product.category).length===60)break;
       }
     }
     for(const product of globalThis.SCHMUCK_PRODUCTS?.[gender]||[])add(product);
     res.setHeader('Cache-Control','s-maxage=3600, stale-while-revalidate=86400');
-    return res.status(200).json({products,count:products.length,requested:25,partnerTag:PARTNER_TAG,updatedAt:new Date().toISOString()});
+    return res.status(200).json({products,count:products.length,requested:200,partnerTag:PARTNER_TAG,updatedAt:new Date().toISOString()});
   }catch(error){
     const products=globalThis.SCHMUCK_PRODUCTS?.[gender]||[];
     res.setHeader('Cache-Control','s-maxage=3600, stale-while-revalidate=86400');
-    return res.status(200).json({products,count:products.length,requested:25,partnerTag:PARTNER_TAG,updatedAt:globalThis.SCHMUCK_PRODUCTS?.updatedAt,source:'verified-cache'});
+    return res.status(200).json({products,count:products.length,requested:200,partnerTag:PARTNER_TAG,updatedAt:globalThis.SCHMUCK_PRODUCTS?.updatedAt,source:'verified-cache'});
   }
 }

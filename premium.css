@@ -27,7 +27,18 @@ header .saved{color:inherit}
 .hero-actions>span{font-size:10px;letter-spacing:.13em;text-transform:uppercase;opacity:.82}
 
 .finder{background:linear-gradient(145deg,var(--panel),var(--paper))}
+#finder,#magazin,#beratung{scroll-margin-top:105px}
 .finder .section-head{margin-bottom:30px}
+.brand-picker{margin-bottom:14px;background:#fff;border:1px solid var(--line);padding:22px 24px;box-shadow:0 14px 38px rgba(56,35,44,.06)}
+.brand-picker-title{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.brand-picker-title h3{font:400 28px/1.1 var(--serif);margin:3px 0 0}
+.brand-scroll{display:grid;grid-template-columns:repeat(6,minmax(115px,1fr));gap:8px}
+.brand-chip{min-height:64px;border:1px solid var(--line);background:var(--paper);color:var(--dark);padding:12px 13px;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:7px;text-align:left;transition:.2s ease}
+.brand-chip span{font-size:11px;font-weight:700;letter-spacing:.035em}
+.brand-chip b{font-size:10px;font-weight:500;opacity:.6}
+.brand-chip:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 8px 20px rgba(56,35,44,.08)}
+.brand-chip.active{background:var(--dark);border-color:var(--dark);color:#fff}
+.brand-chip:disabled{opacity:.35;cursor:default;transform:none;box-shadow:none}
 .finder-game{background:rgba(255,255,255,.58);border:1px solid var(--line);padding:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;box-shadow:0 20px 55px rgba(56,35,44,.07)}
 .finder-step{position:relative;background:#fff;border:1px solid transparent;padding:25px 20px 21px;min-width:0}
 .finder-step h3{font:400 25px/1.1 var(--serif);margin:7px 0 18px}
@@ -64,6 +75,10 @@ header .saved{color:inherit}
 .amazon-link{white-space:nowrap}
 .friendly-empty{text-align:center}
 .friendly-empty button{border:0;background:var(--dark);color:#fff;padding:14px 18px}
+.load-more-wrap{display:flex;justify-content:center;padding:38px 0 10px}
+.load-more{border:1px solid var(--dark);background:var(--dark);color:#fff;padding:16px 24px;min-width:250px;font-weight:700;letter-spacing:.035em;transition:.2s ease}
+.load-more:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(56,35,44,.15)}
+.load-more span{display:block;margin-top:4px;font-size:9px;font-weight:500;opacity:.7;text-transform:uppercase;letter-spacing:.1em}
 
 @media (hover:hover){
   .product-card.has-detail:hover .product-image{opacity:0;transform:scale(.96)}
@@ -72,11 +87,18 @@ header .saved{color:inherit}
 }
 
 @media(max-width:800px){
+  #finder,#magazin,#beratung{scroll-margin-top:128px}
   .hero-visual{inset:0 0 auto;width:100%;height:72%;object-position:center top}
   .hero.women:before{background:linear-gradient(0deg,rgba(55,29,42,.99) 0%,rgba(55,29,42,.94) 31%,rgba(55,29,42,.25) 62%,transparent 80%)}
   .hero-actions{display:block}
   .hero-actions>span{display:block;margin-top:16px;line-height:1.6}
   .finder-game{grid-template-columns:1fr;padding:12px}
+  .brand-picker{padding:18px 0 18px 16px;overflow:hidden}
+  .brand-picker-title{padding-right:16px}
+  .brand-picker-title h3{font-size:24px}
+  .brand-scroll{display:flex;overflow-x:auto;gap:8px;padding:0 16px 8px 0;scroll-snap-type:x proximity;scrollbar-width:none}
+  .brand-scroll::-webkit-scrollbar{display:none}
+  .brand-chip{flex:0 0 128px;scroll-snap-align:start}
   .finder-search{grid-column:auto;grid-template-columns:1fr;gap:8px;padding:8px 4px 4px}
   .finder-reset{grid-column:auto;justify-self:start;margin:2px 4px 6px}
   .product-grid{gap:14px 8px}

@@ -4,11 +4,11 @@ Eigenständige statische Website für schmuck-finder.de. Öffnen Sie `index.html
 
 ## Produktdaten
 
-Die Produktkarten verwenden die Amazon Creators API, den offiziellen Nachfolger der eingestellten PA-API 5. Die Vercel-Funktion durchsucht je Zielgruppe fünf Schmuckkategorien, führt Farbvarianten über die Parent-ASIN zusammen und liefert fünf verfügbare Angebote je Kategorie, also bis zu 25 pro Zielgruppe. Bilder, Titel, Preise und Partnerlinks stammen direkt von Amazon.
+Die Produktkarten verwenden die Amazon Creators API, den offiziellen Nachfolger der eingestellten PA-API 5. Die Vercel-Funktion durchsucht je Zielgruppe fünf Schmuckkategorien, führt Farbvarianten über die Parent-ASIN zusammen und liefert einen geprüften Katalog von 200 Angeboten pro Zielgruppe. Bilder, Titel, Preise und Partnerlinks stammen direkt von Amazon.
 
-Damit der Finder auch bei einer kurzzeitig gedrosselten Schnittstelle sofort funktioniert, enthält `products-data.js` einen am 12. September 2026 über die Creators API geprüften Bestand mit 50 eindeutigen Parent-ASINs: 25 Angebote für Frauen und 25 für Männer. Die Website und `/api/products` verwenden diese Fassung als Ausfallsicherung; sobald gültige Zugangsdaten im neuen Vercel-Projekt vorhanden sind, aktualisiert der Endpunkt den Bestand direkt über Amazon.
+Damit der Finder auch bei einer kurzzeitig gedrosselten Schnittstelle sofort funktioniert, enthält `products-data.js` einen am 12. September 2026 über die Creators API geprüften Bestand mit 400 eindeutigen Parent-ASINs: 200 Angebote für Frauen und 200 für Männer. Die Website und `/api/products` verwenden diese Fassung als Ausfallsicherung; der Endpunkt aktualisiert einen Teil des Bestands direkt über Amazon und ergänzt ihn um den geprüften Katalog.
 
-Die kuratierte Auswahl enthält ausschließlich bekannte Marken. Women zeigt Swarovski, s.Oliver, LIEBESKIND, Fossil und THOMAS SABO. Men zeigt Fossil, Diesel, Lacoste, Police, Tommy Hilfiger und Emporio Armani. Jede Ansicht enthält je fünf Ketten, Ringe, Armbänder, Ohrringe und Anhänger.
+Die kuratierte Auswahl enthält ausschließlich bekannte Marken. Women zeigt Swarovski, THOMAS SABO, Fossil, LIEBESKIND, s.Oliver, Guess, Michael Kors, Calvin Klein, Tommy Hilfiger und Elli. Men zeigt Fossil, Diesel, Police, Tommy Hilfiger, Emporio Armani, BOSS, Lacoste, Calvin Klein, s.Oliver und Maserati. Die Auswahl verteilt sich auf Ketten, Ringe, Armbänder, Ohrringe und Anhänger; jede Marke kann im Finder direkt angeklickt werden.
 
 Für den Hover-Effekt fragt die Schnittstelle zusätzlich `images.variants.large` ab. Wenn Amazon eine weitere Ansicht bereitstellt, zeigt die Produktkarte dieses Detailbild. Ohne alternatives Amazon-Bild bleibt der primäre Produktfreisteller stehen.
 
