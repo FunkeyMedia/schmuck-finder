@@ -165,3 +165,15 @@ body.men .footer-nav span,body.men .footer-partner>span{color:#aaa}
   .product-type{font-size:7px;padding:5px 6px}
   .heart{width:34px;height:34px}
 }
+
+/* Aktuelle Suchfragen */
+.trend-answers{background:#fff;padding-top:88px;padding-bottom:88px}
+.trend-answer-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.trend-answer{min-height:270px;padding:30px 28px;display:flex;flex-direction:column;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .25s ease,color .25s ease,transform .25s ease}
+.trend-answer>span{font:400 13px var(--serif);color:var(--accent);letter-spacing:.12em}
+.trend-answer h3{font:400 29px/1.08 var(--serif);margin:36px 0 12px;max-width:330px}
+.trend-answer p{font-size:13px;line-height:1.65;color:#6d6266;margin:0 0 24px;max-width:350px}
+.trend-answer b{margin-top:auto;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.trend-answer:hover{background:var(--dark);color:#fff;transform:translateY(-3px)}
+.trend-answer:hover p,.trend-answer:hover>span{color:rgba(255,255,255,.68)}
+@media(max-width:800px){.trend-answers{padding-top:68px;padding-bottom:68px}.trend-answer-grid{grid-template-columns:1fr}.trend-answer{min-height:230px;padding:26px 22px}.trend-answer h3{margin-top:27px;font-size:27px}}
