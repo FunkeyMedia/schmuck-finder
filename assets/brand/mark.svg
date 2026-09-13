@@ -1,9 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" role="img" aria-label="SCHMUCK FINDER Signet">
-  <rect width="200" height="240" rx="30" fill="#3d2330"/>
-  <g fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="100" cy="42" r="20"/><path d="M100 62v17"/>
-    <path d="m48 93 52-23 52 23-21 61-31 27-31-27z"/>
-    <path d="m48 93 52 21 52-21M100 70v111M69 154l31-40 31 40"/>
-  </g>
-  <text x="100" y="219" fill="#fff" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" letter-spacing="6">SF</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" role="img" aria-label="SCHMUCK FINDER Signet">
+  <rect width="192" height="192" rx="38" fill="#3d2330"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="96" cy="96" r="68" stroke="#d9a6ae" stroke-width="2"/><circle cx="96" cy="96" r="59" stroke="#d9a6ae" opacity=".55"/>
+  <path d="M63 73c0-17 14-28 34-28 13 0 24 4 31 11M127 56l-7 15M127 120c-5 18-18 28-39 28-15 0-28-5-36-15M53 133l8-16" stroke="#fff" stroke-width="5"/>
+  <path d="M64 57c10 7 24 13 39 20 17 8 25 17 25 29 0 15-13 25-31 25-14 0-26-5-35-14" stroke="#fff" stroke-width="5"/><path d="M87 71h38M87 71v58M87 99h31" stroke="#fff" stroke-width="5"/><path d="m96 20 8 9-8 9-8-9z" fill="#d9a6ae"/></g>
 </svg>

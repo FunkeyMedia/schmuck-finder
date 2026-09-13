@@ -14,7 +14,7 @@ header .audience button{color:#fff}
 header .audience .active{background:#fff;color:#3d2330}
 body.men header .audience .active{color:#050505}
 header .saved{color:inherit}
-header .brand{width:190px;height:74px;display:flex;align-items:center;flex:0 0 auto}
+header .brand{width:225px;height:74px;display:flex;align-items:center;flex:0 0 auto}
 header .brand img{display:block;width:100%;height:100%;object-fit:contain}
 
 .hero{background-image:none!important}
@@ -122,7 +122,7 @@ body.men .footer-nav span,body.men .footer-partner>span{color:#aaa}
 }
 
 @media(max-width:800px){
-  header .brand{width:135px;height:56px}
+  header .brand{width:158px;height:56px}
   #finder,#magazin,#beratung{scroll-margin-top:128px}
   .hero-visual{inset:0 0 auto;width:100%;height:72%;object-position:center top}
   .hero.women:before{background:linear-gradient(0deg,rgba(55,29,42,.99) 0%,rgba(55,29,42,.94) 31%,rgba(55,29,42,.25) 62%,transparent 80%)}
