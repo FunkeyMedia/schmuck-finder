@@ -1,10 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 190" role="img" aria-labelledby="title desc">
-  <title id="title">SCHMUCK FINDER</title><desc id="desc">Elegante Wortmarke mit SF-Monogramm</desc>
-  <g fill="none" stroke="#d9a6ae" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="91" cy="95" r="69" stroke-width="1.5"/><circle cx="91" cy="95" r="60" stroke-width=".7" opacity=".55"/>
-    <path d="M58 72c0-17 14-28 34-28 13 0 24 4 31 11M122 55l-7 15M122 119c-5 18-18 28-39 28-15 0-28-5-36-15M48 132l8-16" stroke="#fff" stroke-width="4"/>
-    <path d="M59 56c10 7 24 13 39 20 17 8 25 17 25 29 0 15-13 25-31 25-14 0-26-5-35-14" stroke="#fff" stroke-width="4"/>
-    <path d="M82 70h38M82 70v58M82 98h31" stroke="#fff" stroke-width="4"/><path d="m91 18 8 9-8 9-8-9z" fill="#d9a6ae" stroke-width="0"/>
+  <title id="title">SCHMUCK FINDER</title><desc id="desc">Elegante Wortmarke mit abstraktem Schmuckemblem</desc>
+  <g fill="none" stroke-linecap="round">
+    <ellipse cx="75" cy="95" rx="33" ry="59" transform="rotate(-24 75 95)" stroke="#d9a6ae" stroke-width="3"/>
+    <ellipse cx="107" cy="95" rx="33" ry="59" transform="rotate(24 107 95)" stroke="#fff" stroke-width="3"/>
+    <path d="M87 36c4-8 8-12 12-16 3 6 7 10 13 14-6 3-10 8-13 15-3-6-7-10-12-13Z" fill="#d9a6ae" stroke="none"/>
   </g>
   <text x="190" y="94" fill="#fff" font-family="Georgia, 'Times New Roman', serif" font-size="64" letter-spacing="8">SCHMUCK</text>
   <text x="194" y="139" fill="#d9a6ae" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="600" letter-spacing="20">FINDER</text>

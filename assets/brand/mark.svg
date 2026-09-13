@@ -1,6 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" role="img" aria-label="SCHMUCK FINDER Signet">
   <rect width="192" height="192" rx="38" fill="#3d2330"/>
-  <g fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="96" cy="96" r="68" stroke="#d9a6ae" stroke-width="2"/><circle cx="96" cy="96" r="59" stroke="#d9a6ae" opacity=".55"/>
-  <path d="M63 73c0-17 14-28 34-28 13 0 24 4 31 11M127 56l-7 15M127 120c-5 18-18 28-39 28-15 0-28-5-36-15M53 133l8-16" stroke="#fff" stroke-width="5"/>
-  <path d="M64 57c10 7 24 13 39 20 17 8 25 17 25 29 0 15-13 25-31 25-14 0-26-5-35-14" stroke="#fff" stroke-width="5"/><path d="M87 71h38M87 71v58M87 99h31" stroke="#fff" stroke-width="5"/><path d="m96 20 8 9-8 9-8-9z" fill="#d9a6ae"/></g>
+  <g fill="none" stroke-linecap="round">
+    <ellipse cx="78" cy="101" rx="35" ry="62" transform="rotate(-24 78 101)" stroke="#d9a6ae" stroke-width="4"/>
+    <ellipse cx="112" cy="101" rx="35" ry="62" transform="rotate(24 112 101)" stroke="#fff" stroke-width="4"/>
+    <path d="M86 35c4-9 9-14 13-19 4 7 8 12 15 16-7 4-11 9-15 17-3-7-8-11-13-14Z" fill="#d9a6ae" stroke="none"/>
+  </g>
 </svg>
