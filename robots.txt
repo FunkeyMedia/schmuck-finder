@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 Sitemap: https://schmuck-finder.de/sitemap.xml

@@ -157,7 +157,7 @@ body.men .footer-nav span,body.men .footer-partner>span{color:#aaa}
 }
 
 @media(max-width:460px){
-  .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .product-grid{grid-template-columns:1fr;gap:20px}
   .product-copy{padding:14px 10px 16px}
   .product-copy h3{font-size:13px;min-height:57px;-webkit-line-clamp:3}
   .product-brand{font-size:9px}
@@ -165,6 +165,7 @@ body.men .footer-nav span,body.men .footer-partner>span{color:#aaa}
   .product-type{font-size:7px;padding:5px 6px}
   .heart{width:34px;height:34px}
 }
+.seo-intro{padding:80px 5vw;min-height:420px}.seo-intro h1{font:400 clamp(45px,7vw,90px)/.95 var(--serif);max-width:900px}.seo-intro p{max-width:760px;font-size:18px;line-height:1.7}.seo-intro a{text-decoration:underline}.active-filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}.active-filters button{border:1px solid var(--line);border-radius:999px;background:#fff;padding:8px 12px;font-size:11px}.active-filters button:after{content:' ×';font-weight:bold}
 
 /* Aktuelle Suchfragen */
 .trend-answers{background:#fff;padding-top:88px;padding-bottom:88px}
@@ -177,3 +178,4 @@ body.men .footer-nav span,body.men .footer-partner>span{color:#aaa}
 .trend-answer:hover{background:var(--dark);color:#fff;transform:translateY(-3px)}
 .trend-answer:hover p,.trend-answer:hover>span{color:rgba(255,255,255,.68)}
 @media(max-width:800px){.trend-answers{padding-top:68px;padding-bottom:68px}.trend-answer-grid{grid-template-columns:1fr}.trend-answer{min-height:230px;padding:26px 22px}.trend-answer h3{margin-top:27px;font-size:27px}}
+.finder-sort{grid-column:1/-1;display:grid;grid-template-columns:auto minmax(190px,280px);align-items:center;gap:18px;padding:4px}.finder-sort span{font-size:11px;letter-spacing:.08em;text-transform:uppercase}.finder-sort select{border:1px solid var(--line);background:#fff;padding:13px 15px}@media(max-width:800px){.finder-sort{grid-column:auto;grid-template-columns:1fr;gap:8px}}
