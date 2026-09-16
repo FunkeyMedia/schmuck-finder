@@ -23,3 +23,7 @@ Für die Migration eines bestehenden Projekts werden zusätzlich die älteren Va
 ## Rechtliches
 
 Impressum und Datenschutz müssen vor dem Geschäftsbetrieb um die echten Betreiberangaben ergänzt werden.
+
+## SEO-Seiten
+
+Die statisch erzeugten Kategorie-, Marken- und Ratgeberseiten werden mit `node generate-seo.mjs` aktualisiert. Der Generator schreibt zugleich die XML-Sitemap. Production wird aus dem GitHub-Branch `main` über die native Vercel-Git-Integration veröffentlicht.
