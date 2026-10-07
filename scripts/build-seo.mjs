@@ -38,6 +38,7 @@ for(const file of files){
 let source=readFileSync('app.js','utf8');
 source=source.replaceAll('500 Pieces für deinen Stil','Ausgewählte Stücke für deinen Stil').replaceAll('Geprüfte Amazon-Angebote','Amazon-Angebote mit Datenstand').replaceAll('Alle 500 Markenstücke zeigen','Alle Markenstücke zeigen').replaceAll('· geprüft ${date}','· Katalogstand ${date}');
 source=source.replace("'Der Moment gehört dir.'","'Schmuck, der zu dir passt.'");
+source=source.replace('<h3>Was darf es kosten?</h3>','<h3>Was darf es kosten?</h3><p class="price-note">Budgetfilter und Sortierung nutzen den gespeicherten Katalogstand. Aktuelle Preise und Versandkosten bitte beim Anbieter prüfen.</p>');
 source=source.replace('function render(){let h=',"function render(){const legacy=(location.hash||'').match(/^#artikel\\/([a-z0-9-]+)$/);if(legacy&&articles.some(a=>a[0]===legacy[1])){window.location.replace('/ratgeber/'+legacy[1]+'/');return;}let h=");
 source=source.replace('const editorialImages=',`for(const article of articles)article[3]=${JSON.stringify(readTimes)}[article[0]]||article[3];\nconst editorialImages=`);
 source=source.replace(/href="#impressum"/g,'href="/impressum/"').replace(/href="#datenschutz"/g,'href="/datenschutz/"');
