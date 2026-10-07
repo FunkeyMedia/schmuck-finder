@@ -18,6 +18,7 @@ for(const file of files){
  let html=readFileSync(file,'utf8');
  html=html.replace(/<strong>[^<]*(?:€|&euro;)[^<]*<\/strong>/g,()=>{removedPrices++;return '<strong>Preis bei Amazon prüfen</strong>'});
  html=html.replaceAll('Fachlich geprüft am 16.09.2026','Redaktioneller Ratgeber · Stand: 16.09.2026');
+ html=html.replaceAll('mit geprüftem Fallback-Katalog','mit gespeichertem Fallback-Katalog');
  html=html.replace(/href="\/?#impressum"/g,'href="/impressum/"').replace(/href="\/?#datenschutz"/g,'href="/datenschutz/"');
  if(html.includes('class="product-grid"'))html=html.replace('</main>','<p class="editorial-note">Die Vorauswahl und Budgetzuordnung beruhen auf dem gespeicherten Katalogstand. Preise können sich ändern. Prüfe den aktuellen Preis, Versand und die Produktvariante beim Anbieter.</p></main>');
  const match=file.replaceAll('\\','/').match(/dist\/ratgeber\/([^/]+)\/index.html$/);
