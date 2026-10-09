@@ -1,0 +1,7 @@
+{
+  "name": "schmuck-finder",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-seo.mjs"
+  }
+}

@@ -1,2 +1,7 @@
 .vercel
 .DS_Store
+.env*
+
+/dist/
+/seo-validation.json
+/seo-build-status.json
